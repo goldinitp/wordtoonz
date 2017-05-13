@@ -26558,7 +26558,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -26567,13 +26567,26 @@
 
 	var _reactRouter = __webpack_require__(178);
 
-	var _app = __webpack_require__(234);
+	var _home = __webpack_require__(234);
+
+	var _home2 = _interopRequireDefault(_home);
+
+	var _result = __webpack_require__(240);
+
+	var _result2 = _interopRequireDefault(_result);
+
+	var _app = __webpack_require__(236);
 
 	var _app2 = _interopRequireDefault(_app);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Routes = _react2.default.createElement(_reactRouter.Route, { path: '/', component: _app2.default });
+	var Routes = _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _app2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/result', component: _result2.default })
+	);
 
 	exports.default = Routes;
 
@@ -26591,17 +26604,178 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _search = __webpack_require__(235);
+
+	var _search2 = _interopRequireDefault(_search);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var App = function App() {
+	var Home = function Home() {
 		return _react2.default.createElement(
-			'h1',
-			{ className: 'hello' },
-			'This is the App'
-		);
+			'div',
+			{ className: 'homeScreenWrapper' },
+			_react2.default.createElement(
+				'h1',
+				null,
+				'Search'
+			),
+			_react2.default.createElement(_search2.default, null)
+		)
+		// view port should cover screen with background image
+		// search component will be on top of it
+		;
+	};
+
+	exports.default = Home;
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Search = function Search() {
+	   return _react2.default.createElement(
+	      'div',
+	      { className: 'search-wrapper' },
+	      _react2.default.createElement('input', { type: 'text', placeholder: 'input your word' }),
+	      _react2.default.createElement(
+	         'button',
+	         null,
+	         'Search'
+	      )
+	   );
+	};
+
+	exports.default = Search;
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var App = function App(props) {
+	   return _react2.default.createElement(
+	      'div',
+	      null,
+	      props.children
+	   );
 	};
 
 	exports.default = App;
+
+/***/ },
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _search = __webpack_require__(235);
+
+	var _search2 = _interopRequireDefault(_search);
+
+	var _signin_signup = __webpack_require__(241);
+
+	var _signin_signup2 = _interopRequireDefault(_signin_signup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Result = function Result() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'homeScreenWrapper' },
+			_react2.default.createElement(
+				'h1',
+				null,
+				'Result'
+			),
+			_react2.default.createElement(_search2.default, null),
+			_react2.default.createElement(
+				'div',
+				{ className: 'result-wrapper' },
+				'your serach result: lorem ipsum'
+			),
+			_react2.default.createElement(_signin_signup2.default, null)
+		)
+		// view port should cover screen with background image
+		// search component will be on top of it
+		;
+	};
+
+	exports.default = Result;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Signin = function Signin() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'signInOutWrapper' },
+			_react2.default.createElement(
+				'h3',
+				null,
+				'Want to save these results to your calendar?'
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'sign-in-wrapper' },
+				_react2.default.createElement(
+					'button',
+					null,
+					'SignIn'
+				)
+			)
+		)
+		// enable custome login and signup
+		;
+	};
+
+	exports.default = Signin;
 
 /***/ }
 /******/ ]);
