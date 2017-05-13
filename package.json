@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack --watch",
-    "start": "node bin/app.jsx"
+    "start": "node bin/app.js"
   },
   "author": "Goldi",
   "license": "ISC",
