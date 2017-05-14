@@ -14,7 +14,7 @@ server.use(morgan('dev'));
 
 server.use('/assets', express.static('build'));
 
-server.use('/', function(req, res, next){
+server.use('/',function(req, res, next){
     res.sendFile(path.normalize(__dirname + '/../app/index.html'));
 });
 
