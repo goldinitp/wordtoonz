@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { auth, googleAuthProvider } from '../firebase/firebase';
+import { Button } from 'semantic-ui-react'
 
 class Signin extends Component {
   constructor(props) {
@@ -30,6 +31,9 @@ class Signin extends Component {
         {!currentUser && <button onClick={() => auth.signInWithPopup(googleAuthProvider)}>
             SignIn
           </button>}
+        <Button>
+            Click Here
+          </Button>
       </div>
     );
   }
