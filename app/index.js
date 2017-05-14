@@ -8,6 +8,8 @@ import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 
+import 'semantic-ui-css/semantic.min.css';
+
 import {finalReducer} from './reducers';
 import routes from './routes';
 
