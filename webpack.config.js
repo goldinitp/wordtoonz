@@ -6,7 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const PATHS = {
   app: path.resolve(__dirname, 'app'),
   styles: path.resolve(__dirname, 'assets/stylesheets/main.scss'),
-  build: path.resolve(__dirname, 'build')
+  build: path.resolve(__dirname, 'build'),
+  assets: path.resolve(__dirname, 'assets/images/wordfinder.jpg')
 };
 
 module.exports = {
@@ -19,7 +20,8 @@ module.exports = {
   // it will resolve to that.
   entry: {
     app: PATHS.app,
-    styles: PATHS.styles
+    styles: PATHS.styles,
+    assets: PATHS.assets
   },
   output: {
     path: PATHS.build,
@@ -37,7 +39,7 @@ module.exports = {
       {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff&name=[name].[ext]'},
       {test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream&name=[name].[ext]'},
       {test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml&name=[name].[ext]'},
-      {test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]'},
+      {test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[path][name].[ext]'},
       {test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'}
     ]
   },
