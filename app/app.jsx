@@ -2,8 +2,10 @@
 
 import React from 'react';
 
-const App = () => (
-	<h1 className="hello">This is the App</h1>
+const App = (props) => (
+	<div>
+    	{props.children}
+    </div>
 );
 
 export default App;
